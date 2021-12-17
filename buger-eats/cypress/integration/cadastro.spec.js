@@ -14,12 +14,12 @@ describe('Cadastro de Entregador' , () => {
             whatsapp: '22999999999',
 
             endereco: {
-                cep:'28470000',
-                rua: 'Rua dos Bobos',
+                cep:'04534011',
+                rua: 'Rua Joaquim Floriano',
                 numero: '100',
                 complemento: 'Ap 102',
-                bairro: 'Casa Velha',
-                cidade_uf: 'Pádua/RJ'
+                bairro: 'Itaim Bibi',
+                cidade_uf: 'São Paulo/SP'
             }
 
         }
@@ -35,5 +35,10 @@ describe('Cadastro de Entregador' , () => {
         cy.get('input[type="button"][value="Buscar CEP"]').click()
         cy.get('input[name="address-number"]').type(entregador.endereco.numero);
         cy.get('input[name="address-details"]').type(entregador.endereco.complemento);
+
+        // VALIDAR CAMPOS
+        cy.get('input[name="address"]').should('have.value' , entregador.endereco.rua); 
+        cy.get('input[name="district"]').should('have.value' , entregador.endereco.bairro); 
+        cy.get('input[name="city-uf"]').should('have.value' , entregador.endereco.cidade_uf); 
     })
 })
