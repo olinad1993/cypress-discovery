@@ -109,5 +109,8 @@ describe('Cadastro de Entregador' , () => {
 
         cy.get('form button[type="submit"]').click()
 
+        cy.get('.alert-error').should('have.text' , 'Oops! CPF inválido')
+
+
     })
 })
