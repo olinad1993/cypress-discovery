@@ -1,6 +1,6 @@
 describe('Cadastro de Entregador' , () => {
 
-    it('Usuário deve se tornar um entregador' , () => {
+    it.skip('Usuário deve se tornar um entregador' , () => {
         cy.viewport(1440,900)
         cy.visit('https://buger-eats.vercel.app')
 
