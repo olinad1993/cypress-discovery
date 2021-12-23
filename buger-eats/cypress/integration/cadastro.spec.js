@@ -8,47 +8,47 @@ describe('Cadastro de Entregador' , () => {
         cy.get('#page-deliver form h1').should('have.text', 'Cadastre-se para  fazer entregas') // problema no espaço da linha
 
         var entregador = {
-            nome:'Danilo Ferreira',
+            name:'Danilo Ferreira',
             cpf: '00000014141',
             email: 'danilo@hotmail.com',
             whatsapp: '22999999999',
 
-            endereco: {
-                cep:'04534011',
-                rua: 'Rua Joaquim Floriano',
-                numero: '100',
-                complemento: 'Ap 102',
-                bairro: 'Itaim Bibi',
-                cidade_uf: 'São Paulo/SP'
+            address: {
+                postalcode:'04534011',
+                street: 'Rua Joaquim Floriano',
+                number: '100',
+                details: 'Ap 102',
+                district: 'Itaim Bibi',
+                city_state: 'São Paulo/SP'
             },
 
-            metodo_entrega: 'Moto',
+            delivery_method: 'Moto',
             cnh: 'cnh-digital.jpg'
             
 
         }
 
-        cy.get('input[name="name"]').type(entregador.nome);
-        cy.get('input[name="cpf"]').type(entregador.cpf);
-        cy.get('input[name="email"]').type(entregador.email);
-        cy.get('input[name="whatsapp"]').type(entregador.whatsapp);
+        cy.get('input[name="name"]').type(deliver.nome);
+        cy.get('input[name="cpf"]').type(deliver.cpf);
+        cy.get('input[name="email"]').type(deliver.email);
+        cy.get('input[name="whatsapp"]').type(deliver.whatsapp);
 
         // ENDEREÇO
 
-        cy.get('input[name="postalcode"]').type(entregador.endereco.cep);
+        cy.get('input[name="postalcode"]').type(deliver.address.cep);
         cy.get('input[type="button"][value="Buscar CEP"]').click()
-        cy.get('input[name="address-number"]').type(entregador.endereco.numero);
-        cy.get('input[name="address-details"]').type(entregador.endereco.complemento);
+        cy.get('input[name="address-number"]').type(deliver.address.numero);
+        cy.get('input[name="address-details"]').type(deliver.address.complemento);
 
         // VALIDAR CAMPOS
-        cy.get('input[name="address"]').should('have.value' , entregador.endereco.rua); 
-        cy.get('input[name="district"]').should('have.value' , entregador.endereco.bairro); 
-        cy.get('input[name="city-uf"]').should('have.value' , entregador.endereco.cidade_uf); 
+        cy.get('input[name="address"]').should('have.value' , deliver.address.rua); 
+        cy.get('input[name="district"]').should('have.value' , deliver.address.bairro); 
+        cy.get('input[name="city-uf"]').should('have.value' , deliver.address.cidade_uf); 
 
         // funcão recebe localizador, juntar localizador CSS com texto
-        cy.contains('.delivery-method li' , entregador.metodo_entrega).click();
+        cy.contains('.delivery-method li' , deliver.delivery_method).click();
 
-        cy.get('input[accept^="image"]').attachFile('/images/' + entregador.cnh) // Componente do file upload
+        cy.get('input[accept^="image"]').attachFile('/images/' + deliver.cnh) // Componente do file upload
 
         cy.get('form button[type="submit"]').click()
 
