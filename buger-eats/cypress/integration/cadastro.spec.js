@@ -57,7 +57,7 @@ describe('Cadastro de Entregador' , () => {
         cy.get('.swal2-container .swal2-html-container').should('have.text' , expectedMessage)
     })
 
-    it.skip('CPF incorreto' , () => {
+    it('CPF incorreto' , () => {
         cy.viewport(1440,900)
         cy.visit('https://buger-eats.vercel.app')
 
