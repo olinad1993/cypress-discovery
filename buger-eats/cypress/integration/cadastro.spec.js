@@ -2,9 +2,28 @@ import SignupPage from '../pages/SignupPage'
 
 describe('Cadastro de Entregador' , () => {
 
-    it.skip('Usuário deve se tornar um entregador' , () => {
+    let signup = new SignupPage()
 
-        var deliver = {
+    // before(function (){
+    //     cy.log('Tudo aqui é executado uma unica vez ANTES de TODOS os casos de testes')
+    // })
+
+    // beforeEach(function (){
+    //     cy.log('Tudo aqui é executado sempre ANTES de CADA caso de teste')
+    // })
+
+
+    // after(function (){
+    //     cy.log('Tudo aqui é executado uma unica vez DEPOIS de TODOS os casos de testes')
+    // })
+
+    // afterEach(function(){
+    //     cy.log('Tudo aqui é executado uma unica vez DEPOIS de TODOS os casos de testes')
+    // })
+
+    it('Usuário deve se tornar um entregador' , () => {
+
+        let deliver = {
             name:'Danilo Ferreira',
             cpf: '00000014141',
             email: 'danilo@hotmail.com',
@@ -23,8 +42,6 @@ describe('Cadastro de Entregador' , () => {
             cnh: 'cnh-digital.jpg'
         }
 
-        var signup = new SignupPage()
-
         signup.go()
         signup.fillform(deliver)
         signup.submit()
@@ -35,7 +52,7 @@ describe('Cadastro de Entregador' , () => {
 
     it('CPF incorreto' , () => {
 
-        var deliver = {
+        let deliver = {
             name:'Danilo Ferreira',
             cpf: '000000141AA',
             email: 'danilo@hotmail.com',
@@ -53,8 +70,6 @@ describe('Cadastro de Entregador' , () => {
             delivery_method: 'Moto',
             cnh: 'cnh-digital.jpg'
         }
-
-        var signup = new SignupPage()
 
         signup.go()
         signup.fillform(deliver)
