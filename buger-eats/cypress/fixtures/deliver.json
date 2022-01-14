@@ -16,7 +16,6 @@
             "delivery_method": "Moto",
             "cnh": "cnh-digital.jpg"
     },
-
     "cpf_inv": {
         "name":"Maria Ferreira",
         "cpf": "00000014141",
@@ -30,7 +29,7 @@
             "district": "Itaim Bibi",
             "city_state": "São Paulo/SP"
         },
-        
+
         "delivery_method": "Moto",
         "cnh": "cnh-digital.jpg"
     }
