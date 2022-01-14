@@ -1,16 +1,16 @@
 import SignupPage from '../pages/SignupPage'
 
-describe('Cadastro de Entregador' , () => {
-    
-    beforeEach(()=> {
-        cy.fixture('deliver').then((d)=> {
+describe('Cadastro de Entregador', () => {
+
+    beforeEach(function () {
+        cy.fixture('deliver').then((d) => {
             this.deliver = d
         })
     })
 
-     let signup = new SignupPage()
+    var signup = new SignupPage()
 
-    it('Usuário deve se tornar um entregador' , () => {
+    it('Usuário deve se tornar um entregador', function () {
         signup.go()
         signup.fillform(this.deliver.signup)
         signup.submit()
@@ -19,7 +19,7 @@ describe('Cadastro de Entregador' , () => {
         signup.modalContentShouldBe(expectedMessage)
     })
 
-    it('CPF incorreto' , () => {
+    it('CPF incorreto', function () {
 
         signup.go()
         signup.fillform(this.deliver.cpf_inv)
