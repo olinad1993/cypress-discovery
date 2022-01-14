@@ -10,7 +10,7 @@
   "author": "Danilo Ferreira",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^9.1.1",
+    "cypress": "^9.2.1",
     "cypress-file-upload": "^5.0.8"
   }
 }
