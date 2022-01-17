@@ -26,4 +26,12 @@ describe('Cadastro de Entregador', () => {
         signup.submit()
         signup.alertMessageShouldBe('Oops! CPF inválido')
     })
+
+    it('Email Incorreto', function () {
+
+        signup.go()
+        signup.fillform(this.deliver.email_inv)
+        signup.submit()
+        signup.alertMessageShouldBe('Oops! Email com formato inválido.')
+    })
 })
