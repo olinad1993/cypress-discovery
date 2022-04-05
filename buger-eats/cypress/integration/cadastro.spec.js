@@ -49,7 +49,7 @@ describe('Cadastro de Entregador', () => {
 
     context('Requer dados' , function(){
          const messages = [
-            {field: 'name', output: 'É necessario informar o nome'},
+            {field: 'name', output: 'É necessário informar o nome'},
             {field: 'cpf', output: 'É necessário informar o CPF'},
             {field: 'email', output: 'É necessário informar o email'},
             {field: 'postalcode', output: 'É necessário informar o CEP'},
